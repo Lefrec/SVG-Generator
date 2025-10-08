@@ -8,7 +8,7 @@ if (!id) {
     throw new Error("SVG id parameter is missing.");
 }
 
-let svg: SvgRecord | null = null;
+let svg
 try {
     svg = await pb.collection("SavedSVG").getOne(id);
 } catch (error) {
@@ -62,7 +62,7 @@ try {
 // }
 ---
 
-<Layout title={svg ? svg.nom : "SVG Details"}>
+<Layout title={svg ? svg.name : "SVG Details"}>
     <div class="flex w-full h-full">
         <div
             id="svg-preview"
