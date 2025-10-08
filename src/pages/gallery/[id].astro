@@ -10,7 +10,7 @@ if (!id) {
 
 let svg: SvgRecord | null = null;
 try {
-    svg = await pb.collection(Collections.Svg).getOne(id);
+    svg = await pb.collection("SavedSVG").getOne(id);
 } catch (error) {
     console.error("Failed to fetch SVG:", error);
     Astro.redirect("/gallery");
